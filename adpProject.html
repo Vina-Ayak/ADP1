@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Home Remedy Recommender</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Home Remedy Recommender</h1>
+
+    <!-- Search Input -->
+    <input 
+      type="text" 
+      id="search-box" 
+      placeholder="Enter your symptom (e.g., headache)" 
+      oninput="filterRemedies()" />
+
+    <!-- Remedies -->
+    <div id="remedy-list">
+      <div class="remedy" data-keywords="headache migraine pain">
+        <h3>Headache Remedies</h3>
+        <p>Drink water, rest, or use a cold compress on your head.</p>
+      </div>
+      <div class="remedy" data-keywords="cold cough sore throat">
+        <h3>Cold Remedies</h3>
+        <p>Drink ginger tea with honey or gargle with warm salt water.</p>
+      </div>
+      <div class="remedy" data-keywords="stomachache stomach pain indigestion">
+        <h3>Stomachache Remedies</h3>
+        <p>Drink warm chamomile tea or eat a small piece of ginger.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function filterRemedies() {
+      const searchValue = document.getElementById("search-box").value.toLowerCase();
+      const remedies = document.querySelectorAll(".remedy");
+
+      remedies.forEach(remedy => {
+        const keywords = remedy.getAttribute("data-keywords");
+        if (keywords.includes(searchValue) || searchValue === "") {
+          remedy.style.display = "block";
+        } else {
+          remedy.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

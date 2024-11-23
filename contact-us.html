@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us - Sri Krishna College of Technology</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Personal Informnation</legend>
+            <label >Name:</label>
+            <input type="text" id="name" name="name" required pattern="[a-z]">
+            <br><br>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                
+            </select>
+            <br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+            <small>Format: 1234567890</small>
+            <br><br>
+
+            <button type="submit">Submit</button>
+        </fieldset>
+        <fieldset>
+            <legend>Report Details</legend>
+            <label for="Report"></label>
+            <input type="textfield" id="Report" name="Report" required placeholder="Enter your queries">
+        </fieldset>
+        <input type="text" id="name" name="name" required pattern="[a-z]">
+    </form>
+</body>
+</html>
